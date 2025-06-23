@@ -1,0 +1,33 @@
+server:
+  port: 8082
+
+spring:
+  kafka:
+    bootstrap-servers: 192.168.0.237:9092
+  cloud:
+    config:
+      enabled: false
+#      //fyud shtt muwx ucgh
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: bravadosw@gmail.com
+    password: fyudshttmuwxucgh # 앱 비밀번호 (16자리)
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  #    lease-renewal-interval-in-seconds: 10  # 하트비트 간격(기본 30초)
+  #    lease-expiration-duration-in-seconds: 30  # 만료 시간(기본 90초)
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+

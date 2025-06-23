@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>식단 알림</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f9f9f9; font-family:'Apple SD Gothic Neo', 'Segoe UI', sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f9f9f9; padding:30px 0;">
+    <tr>
+        <td align="center">
+            <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+                <!-- 헤더 영역 -->
+                <tr>
+                    <td style="padding:20px; display:flex; align-items:center;">
+                        <table width="100%">
+                            <tr>
+                                <td align="left">
+                                    <!-- 왼쪽 상단 이미지 삽입 -->
+                                    <img src="https://i.postimg.cc/Wz9sNBXx/calog.png" alt="Calog 로고" style="height:80px;" />
+                                </td>
+                                <td align="right" style="color:#999999; font-size:12px;">
+                                    <span th:text="${#dates.format(#dates.createNow(), 'yyyy.MM.dd')}">2025.06.23</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- 본문 영역 -->
+                <tr>
+                    <td style="padding:32px 40px;">
+                        <h2 style="color:#222222; margin:0 0 12px 0; font-size:22px;">
+                            안녕하세요, <span th:text="${username}">홍길동</span>님!
+                        </h2>
+                        <p style="color:#444444; font-size:15px; line-height:1.7; margin-bottom:24px;">
+                            아래는 오늘의 식단 관련 알림입니다:
+                        </p>
+
+                        <div style="background-color:#ecf8f2; padding:20px 24px; border-left:4px solid #4caf50; border-radius:8px; font-size:15px; color:#2e7d32;">
+                            <p style="margin:0;" th:text="${message}">오늘 점심은 단백질이 부족해요. 닭가슴살을 추가해보세요!</p>
+                        </div>
+
+                        <p style="margin-top:32px; color:#666666; font-size:14px;">
+                            건강을 위한 식단 습관을 응원합니다 💪<br />
+                            <strong style="color:#4caf50;">Calog</strong> 팀 드림
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- 푸터 -->
+                <tr>
+                    <td style="background-color:#f1f1f1; padding:20px; text-align:center; font-size:12px; color:#999999;">
+                        ⓒ 2025 Calog. All rights reserved.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
